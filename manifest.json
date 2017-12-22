@@ -7,10 +7,15 @@
 	"minimum_chrome_version" : "38",
 	"permissions": [
 		"contextMenus",
+		"storage",
 		"tabs"
 	],
 	"icons": {
 		"16": "assets/dial.png"
+	},
+	"options_ui": {
+		"page": "options.html" ,
+		"open_in_tab": true
 	},
 	"background": {"page": "background.html"}
 }
