@@ -13,7 +13,7 @@ dial_number = function(number) {
 };
 
 chrome.contextMenus.create({
-  title: "dial", // should make this localized
-  contexts:["selection"],
-  onclick: dial_number
+	title: "dial", // should make this localized
+	contexts:["selection"],
+	onclick: dial_number
 });
