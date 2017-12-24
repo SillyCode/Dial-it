@@ -1,7 +1,12 @@
 dial_number = function(number) {
 	var selection = number.selectionText;
 	if(!isNaN(selection)) {
-		alert("We are going to dial: '" + number.selectionText + "'");
+		$.ajax({
+			$url: "test.php",
+			success: function(result){
+// 				alert("We are going to dial: '" + number.selectionText + "'");
+			}
+		});
 	} else {
 		alert("not a number");
 	}
