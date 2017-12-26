@@ -1,14 +1,15 @@
 dial_number = function(number) {
 	var selection = number.selectionText;
-	var extension = null;
-	var password = null;
 	chrome.storage.sync.get([
 		"extension",
 		"password"
 	], function(items) {
-	  	extension = items.extension;
-	  	password = items.password;
+		send_data(items.extension, items.password, selection);
 	});
+};
+
+function send_data(extension, password, selection) {
+	var url = chrome.runtime.getURL('functions.php');
 	jQuery.ajax({
 		type: "POST",
 		url: "http://localhost/workspace/my_projects/chrome_extensions/dial_it/functions.php",
@@ -17,7 +18,7 @@ dial_number = function(number) {
 			//TODO: do something here
 		}
 	});
-};
+}
 
 //TODO: check why created twice? bug?
 var cm = chrome.contextMenus.create({
