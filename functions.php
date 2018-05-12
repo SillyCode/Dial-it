@@ -5,5 +5,8 @@ if(array_key_exists('store', $_GET)) {
 	file_put_contents('/tmp/test', $var); //TODO: there should be an appropriate place for this
 }
 
+if(array_key_exists('dial', $_GET)) {
+	//TODO: do some thing here
+}
 
 ?>

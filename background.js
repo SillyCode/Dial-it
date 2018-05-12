@@ -9,17 +9,19 @@ dial_number = function(number) {
 	  	extension = items.extension;
 	  	password = items.password;
 	});
-	jQuery.ajax({
+
+	//TODO: check if pass/user are set
+	//Dial the number
+	$.ajax({
 		type: "POST",
-		url: "http://localhost/workspace/my_projects/chrome_extensions/dial_it/functions.php",
-		data: { selected_text: selection, extension: extension, password: password},
+		url: "http://localhost/workspace/my_projects/chrome_extensions/dial_it/functions.php?dial",
+		data: { number: selection },
 		success: function(data) {
-			//TODO: do something here
+			alert("Dialed it");
 		}
 	});
 };
 
-//TODO: check why created twice? bug?
 var cm = chrome.contextMenus.create({
 	title: "dial", // should make this localized
 	contexts:["selection"],
