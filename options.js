@@ -11,6 +11,17 @@ function save_options() {
 			status.textContent = '';
 		}, 750);
 	});
+
+	//Save to file
+	$.ajax({
+		type: "POST",
+		url: "http://localhost/workspace/my_projects/chrome_extensions/dial_it/functions.php?store",
+		data: { extension: extension, password: password},
+		success: function(data) {
+			alert("Info saved"); ////TODO: do something here. Also localize this
+
+		}
+	});
 }
 
 function restore_options() {
